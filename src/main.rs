@@ -1,16 +1,25 @@
 use std::env;
 use std::process;
-#[cfg(unix)]
+/// EXIT CODE: SUCCESS
 const EXIT_OK: i32 = 0x0000;
+/// EXIT CODE: FAILURE
 const EXIT_ERR: i32 = 0x0100;
+/// Help message
 const MSG_USAGE: &'static str = "Run dockinfo --help for usage";
+/// The docker inspect syntax for getting the IP address
 const CMD_DOCKER_INSPECT: &'static str =
     "'{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'";
+/// The `ip` argument
 const ARG_IP: &'static str = "ip";
+/// The `--help` argument
 const ARG_HELP: &'static str = "--help";
+/// Permission denied error
 const ERR_UNIX_SOCKET: &'static str = "Got permission denied";
+/// Container not found error
 const ERR_NOT_FOUND: &'static str = "Error: No such object: ";
+/// Result when no output is returned
 const RESULT_NO_OUTPUT: &'static str = "''";
+/// The DOCKER_BIN environment variable
 const ENV_VARIABLE_DOCKER_BINARY: &'static str = "DOCKER_BIN";
 
 fn main() {
@@ -45,6 +54,7 @@ fn main() {
     }
 }
 
+/// Get the IP address of a given container
 fn get_ipinfo(args: Vec<String>, path_if_any: Option<String>) {
     if args.len() == 1 {
         eprintln!(
@@ -100,6 +110,7 @@ fn get_ipinfo(args: Vec<String>, path_if_any: Option<String>) {
         process::exit(EXIT_ERR);
     }
 }
+/// Show the help message
 fn show_help() {
     println!(
         "USAGE: dockinfo ip <CONTAINER_NAME>\nGet information about docker containers. dockinfo expects that the docker binary is already present in the path."

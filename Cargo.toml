@@ -1,7 +1,14 @@
 [package]
 name = "dockinfo"
-version = "0.1.0"
+version = "1.0.1"
 authors = ["Sayan Nandan <nandansayan@outlook.com>"]
+license = "Apache-2.0"
+description = "A tool to get information from docker containers"
+readme = "README.md"
+homepage = "https://github.com/sntdevco/dockinfo"
+repository = "https://github.com/sntdevco/dockinfo"
+keywords = ["cli", "docker", "container", "info"]
+categories = ["command-line-utilities"]
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
