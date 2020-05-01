@@ -3,7 +3,14 @@
 `dockinfo` is an utility that enables users to use `docker inspect` commands in a more ergonomic way. For now, the inspection options are only limited to checking the `ip` address of a given container. More commands will be added soon.
 
 ## Install
-Simply run:
+On systems where you don't want to use cargo, download the latest release [here](./releases/download/latest). Copy the binary into any directory which is added to `$PATH` and then run `dockinfo` from anywhere. If you're on a Debian based system, simply run the packaged installation script:
+```shell
+    $ chmod +x install-debian.sh
+    $ ./install-debian.sh
+    Done!
+```
+
+If you're absolutely rustic (like me). Simply run:
 ```sh
 cargo install dockinfo
 ```
