@@ -1,4 +1,4 @@
-# This script is used by me(@sntdevco) for packaging releases
+# This script is used by me(@ohsayan) for packaging releases
 rm -rf tarball
 mkdir tarball
 mkdir target/tarball
